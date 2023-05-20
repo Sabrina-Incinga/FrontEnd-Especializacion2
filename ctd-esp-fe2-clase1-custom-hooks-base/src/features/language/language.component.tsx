@@ -1,10 +1,10 @@
 import { FC, useContext } from 'react';
-import Languages from "features/language/language.types";
+import Language from "features/language/language.types";
 import { LanguageContext } from 'languageContext/language.context';
 
 type LanguageComponentProps = {
-    language: Languages
-    setLanguage: (language: Languages) => void
+    language: Language
+    setLanguage: (language: Language) => void
     t: (key: string) => string;
 }
 

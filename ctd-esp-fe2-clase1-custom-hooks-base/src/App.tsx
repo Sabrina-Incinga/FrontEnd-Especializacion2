@@ -8,7 +8,7 @@ import { store } from 'store/store';
 import Page1 from 'pages/Page1';
 import { LanguageComponent } from 'features/language';
 import { TrackingProvider } from 'features/tracking/tracking.context';
-import Languages from "features/language/language.types";
+import Language from "features/language/language.types";
 import esTranslations from "data/i18n.es";
 import enTranslations from "data/i18n.en";
 import ptTranslations from "data/i18n.pt";
