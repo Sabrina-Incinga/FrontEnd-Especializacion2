@@ -4,11 +4,11 @@ import {
   FacebookTrackingSoftware,
   GoogleTrackingSoftware
 } from 'features/tracking/software';
-import { TrackingSoftware } from 'features/tracking/tracking.types';
+import { TrackingSoftware, TrackingSoftwareInit } from 'features/tracking/tracking.types';
 import AmplitudeLiskovTrackingSoftware from 'features/tracking/software/amplitude.liskov';
 
 export interface TrackingState {
-  trackingSoftwares: TrackingSoftware[];
+  trackingSoftwares: (TrackingSoftware | TrackingSoftwareInit)[];
     trackEvent: (eventName: string, location: string) => void;
 }
 
@@ -26,7 +26,6 @@ export const TrackingProvider: FC = ({ children }) => {
       trackingSoftwares,
         trackEvent: (eventName: string, location: string) =>
           trackingSoftwares.forEach((trackingSoftware) => {
-            trackingSoftware.initialize();
             trackingSoftware.trackEvent(eventName, location);
           })
     }),
